@@ -1,0 +1,49 @@
+{
+  "id": "com.danfoss",
+      "name": {
+  				"en": "Danfoss"
+  			},
+      "version": "1.0.0",
+      "compatibility": ">=0.9.0",
+      "description": {
+  					"en": "Danfoss devices for Homey"
+  					},
+      "category": [ "climate" ],
+      "images": {
+  				"large": "/assets/images/large.png",
+  				"small": "/assets/images/small.png"
+  			  },
+      "author":	{
+          "name": "Martin Brasse",
+          "email": "kasteleman@gmail.com"
+  				},
+
+    "drivers": [
+	    {
+  	    "id": "LC",
+		    "name": {
+						"en": "Living Connect"
+					},
+		    "zwave": {
+						"manufacturerId": 2,
+						"productTypeId": 5,
+						"productId": 3,
+						"learnmode": {
+										"image": "/drivers/LC/assets/learnmode.svg",
+										"instruction": {
+                      "en": "Komt nog",
+                      "nl": "NA"
+														}
+									},
+						"associationGroups": [ 1 ]
+					},
+		    "class": "thermostat",
+		    "capabilities": [ "target_temperature", "measure_battery" ],
+		    "images": {
+                "large": "/drivers/LC/assets/images/DanfossLiving.jpg",
+					      "small": "/drivers/LC/assets/images/small.png"
+              	},
+				"settings": []
+      }
+  		]
+  	}
