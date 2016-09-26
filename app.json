@@ -4,7 +4,7 @@
   				"en": "Danfoss"
   			},
       "version": "1.0.0",
-      "compatibility": ">=0.9.0",
+      "compatibility": ">=0.10.0",
       "description": {
   					"en": "Danfoss devices for Homey"
   					},
@@ -39,6 +39,18 @@
 					},
 		    "class": "thermostat",
 		    "capabilities": [ "target_temperature", "measure_battery" ],
+        "mobile": {
+        "components": [
+          {
+              "id": "icon",
+              "capabilities": [ "thermostat" ]
+          },
+          {
+              "id": "sensor",
+              "capabilities": [ "measure_battery" ]
+          }
+        ]
+        },
 		    "images": {
                 "large": "/drivers/LC/assets/images/DanfossLiving.jpg",
 					      "small": "/drivers/LC/assets/images/small.png"
