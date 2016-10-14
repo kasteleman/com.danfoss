@@ -47,13 +47,14 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			},
 			command_report: 'THERMOSTAT_SETPOINT_REPORT',
 			command_report_parser: report => {
-				console.log(report);
-				console.log(report['Value'].readUIntBE(0, report.Level2['Size']));
+			//console.log(report);
 				if (report.hasOwnProperty('Level2') &&
 					report.Level2.hasOwnProperty('Precision') &&
 					report.Level2.hasOwnProperty('Size')) {
-						if (report.Level2['Precision'] == 2) return report['Value'].readUIntBE(0, report.Level2['Size']) / 100;
-				}
+						const scale = Math.pow(10, report.Level2['Precision']);
+						return report['Value'].readUIntBE(0, report.Level2['Size']) / scale;
+						//console.log(report['Value'].readUIntBE(0, report.Level2['Size']) / scale);
+					}
 			}
 		}
 	}
